@@ -3,15 +3,15 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://localhost:1313/categories/</loc>
+    <loc>https://hyunwoo-kr.github.io/categories/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:1313/tags/</loc>
+    <loc>https://hyunwoo-kr.github.io/tags/</loc>
   </url>
   
   <url>
-    <loc>http://localhost:1313/</loc>
+    <loc>https://hyunwoo-kr.github.io/</loc>
   </url>
   
 </urlset>
