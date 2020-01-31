@@ -1,10 +1,50 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml"><url>
-    <loc>https://hyunwoo-kr.github.io/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod><priority>0</priority></url><url>
-    <loc>https://hyunwoo-kr.github.io/categories/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod></url><url>
-    <loc>https://hyunwoo-kr.github.io/post/first/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod></url><url>
-    <loc>https://hyunwoo-kr.github.io/categories/plan/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod></url><url>
-    <loc>https://hyunwoo-kr.github.io/post/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod></url><url>
-    <loc>https://hyunwoo-kr.github.io/tags/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod></url><url>
-    <loc>https://hyunwoo-kr.github.io/tags/task/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod></url><url>
-    <loc>https://hyunwoo-kr.github.io/categories/%EA%B3%84%ED%9A%8D/</loc><lastmod>2020-01-31T13:17:14+09:00</lastmod></url></urlset>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/categories/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/categories/plan/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/post/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/tags/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/tags/task/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/categories/%EA%B3%84%ED%9A%8D/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/2020/01/%EC%83%88%ED%95%B4-%EB%AA%A9%ED%91%9C/</loc>
+    <lastmod>2020-01-31T13:17:14+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/archives/</loc>
+  </url>
+  
+</urlset>

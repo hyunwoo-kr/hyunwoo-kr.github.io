@@ -1,32 +1,31 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 현우의 기술 블로그</title>
-    <link>/categories/</link>
+    <link>https://hyunwoo-kr.github.io/categories/</link>
     <description>Recent content in Categories on 현우의 기술 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en</language>
-    <copyright>©2020 HYUNWOO.</copyright>
+    <language>en-us</language>
     <lastBuildDate>Fri, 31 Jan 2020 13:17:14 +0900</lastBuildDate>
     
-        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://hyunwoo-kr.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>PLAN</title>
-      <link>/categories/plan/</link>
+      <link>https://hyunwoo-kr.github.io/categories/plan/</link>
       <pubDate>Fri, 31 Jan 2020 13:17:14 +0900</pubDate>
       
-      <guid>/categories/plan/</guid>
+      <guid>https://hyunwoo-kr.github.io/categories/plan/</guid>
       <description></description>
     </item>
     
     <item>
       <title>계획</title>
-      <link>/categories/%EA%B3%84%ED%9A%8D/</link>
+      <link>https://hyunwoo-kr.github.io/categories/%EA%B3%84%ED%9A%8D/</link>
       <pubDate>Fri, 31 Jan 2020 13:17:14 +0900</pubDate>
       
-      <guid>/categories/%EA%B3%84%ED%9A%8D/</guid>
+      <guid>https://hyunwoo-kr.github.io/categories/%EA%B3%84%ED%9A%8D/</guid>
       <description></description>
     </item>
     
