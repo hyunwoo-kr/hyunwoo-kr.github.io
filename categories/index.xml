@@ -5,7 +5,7 @@
     <link>/categories/</link>
     <description>Recent content in Categories on 현우의 기술 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>ko</language>
+    <language>en</language>
     <copyright>©2020 HYUNWOO.</copyright>
     <lastBuildDate>Fri, 31 Jan 2020 13:17:14 +0900</lastBuildDate>
     
@@ -18,6 +18,15 @@
       <pubDate>Fri, 31 Jan 2020 13:17:14 +0900</pubDate>
       
       <guid>/categories/plan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>계획</title>
+      <link>/categories/%EA%B3%84%ED%9A%8D/</link>
+      <pubDate>Fri, 31 Jan 2020 13:17:14 +0900</pubDate>
+      
+      <guid>/categories/%EA%B3%84%ED%9A%8D/</guid>
       <description></description>
     </item>
     
