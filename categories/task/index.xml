@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>task on Notepadium</title>
+    <link>/categories/task/</link>
+    <description>Recent content in task on Notepadium</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 31 Jan 2020 12:40:26 +0900</lastBuildDate>
+    
+        <atom:link href="/categories/task/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Intro</title>
+      <link>/post/intro/</link>
+      <pubDate>Fri, 31 Jan 2020 12:40:26 +0900</pubDate>
+      
+      <guid>/post/intro/</guid>
+      <description>2020년 새해 목표 하루에 한 번 글쓰기.</description>
+    </item>
+    
+  </channel>
+</rss>

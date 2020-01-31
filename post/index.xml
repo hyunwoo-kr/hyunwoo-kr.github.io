@@ -1,23 +1,33 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on 현우의 기술 블로그</title>
-    <link>https://hyunwoo-kr.github.io/post/</link>
-    <description>Recent content in Posts on 현우의 기술 블로그</description>
+    <title>Posts on Notepadium</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on Notepadium</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 31 Jan 2020 10:07:07 +0900</lastBuildDate>
+    <language>en</language>
+    <copyright>©2020 Notepadium.</copyright>
+    <lastBuildDate>Fri, 31 Jan 2020 13:04:40 +0900</lastBuildDate>
     
-	<atom:link href="https://hyunwoo-kr.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
-      <title>최소 1달에 한 건.</title>
-      <link>https://hyunwoo-kr.github.io/post/test/</link>
-      <pubDate>Fri, 31 Jan 2020 10:07:07 +0900</pubDate>
+      <title>User_guide</title>
+      <link>/post/tron/user_guide/</link>
+      <pubDate>Fri, 31 Jan 2020 13:04:40 +0900</pubDate>
       
-      <guid>https://hyunwoo-kr.github.io/post/test/</guid>
-      <description>최소 한 달에 1건의 기술 블로그를 작성 해 보자</description>
+      <guid>/post/tron/user_guide/</guid>
+      <description>TRON 분석 및 TestNet 사용.</description>
+    </item>
+    
+    <item>
+      <title>Intro</title>
+      <link>/post/intro/</link>
+      <pubDate>Fri, 31 Jan 2020 12:40:26 +0900</pubDate>
+      
+      <guid>/post/intro/</guid>
+      <description>2020년 새해 목표 하루에 한 번 글쓰기.</description>
     </item>
     
   </channel>

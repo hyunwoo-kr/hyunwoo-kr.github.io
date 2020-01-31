@@ -1,13 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on 현우의 기술 블로그</title>
-    <link>https://hyunwoo-kr.github.io/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on 현우의 기술 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>en</language>
+    <copyright>©2020 HYUNWOO.</copyright>
     
-	<atom:link href="https://hyunwoo-kr.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
   </channel>
