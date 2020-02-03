@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>tronapi on 현우의 기술 블로그</title>
+    <link>https://hyunwoo-kr.github.io/tags/tronapi/</link>
+    <description>Recent content in tronapi on 현우의 기술 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 03 Feb 2020 17:51:02 +0900</lastBuildDate>
+    
+	<atom:link href="https://hyunwoo-kr.github.io/tags/tronapi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>[tips] TRON - Python API를 사용한 송금</title>
+      <link>https://hyunwoo-kr.github.io/2020/02/tips-tron-python-api%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%86%A1%EA%B8%88/</link>
+      <pubDate>Mon, 03 Feb 2020 17:51:02 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/2020/02/tips-tron-python-api%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%86%A1%EA%B8%88/</guid>
+      <description>&lt;p&gt;Tron Python API 모듈을 사용해서 TRC10 &amp;lsquo;송금&#39;을 하려면 어떻게 해야 할까?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

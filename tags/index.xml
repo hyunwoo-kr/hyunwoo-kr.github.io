@@ -6,10 +6,37 @@
     <description>Recent content in Tags on 현우의 기술 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 01 Feb 2020 12:04:30 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 03 Feb 2020 17:51:02 +0900</lastBuildDate>
     
 	<atom:link href="https://hyunwoo-kr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>tron</title>
+      <link>https://hyunwoo-kr.github.io/tags/tron/</link>
+      <pubDate>Mon, 03 Feb 2020 17:51:02 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/tron/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tron-api-python</title>
+      <link>https://hyunwoo-kr.github.io/tags/tron-api-python/</link>
+      <pubDate>Mon, 03 Feb 2020 17:51:02 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/tron-api-python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>tronapi</title>
+      <link>https://hyunwoo-kr.github.io/tags/tronapi/</link>
+      <pubDate>Mon, 03 Feb 2020 17:51:02 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/tronapi/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>go</title>
