@@ -266,8 +266,8 @@ if (!doNotTrack) {
 <li><a href="https://developers.tron.network/">TRON Developers</a></li>
 <li><a href="https://developers.tron.network/docs/trc10-token">TRC10 이란?</a></li>
 </ul>
-<p>GitHub의 <a href="https://github.com/iexbase/tron-api-python/blob/master/examples/send-transaction.py">Python API</a>를 그대로 따라하다 보면 아래와 같은 error가 발생한다.</p>
-<h2 id="github에서-제공하는-trc10--송금">Github에서 제공하는 TRC10  송금</h2>
+<p>GitHub의 <a href="https://github.com/iexbase/tron-api-python/blob/master/examples/send-transaction.py">Python API</a>를 기본으로 하여 TRC10 토큰 송금을 구현해 보니 아래와 같은 error가 발생한다.</p>
+<h2 id="github에서-제공하는-trc-송금">Github에서 제공하는 TRC 송금</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> Tron
 <span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> HttpProvider
 
@@ -287,7 +287,27 @@ tron<span style="color:#f92672">.</span>default_address <span style="color:#f926
 send <span style="color:#f92672">=</span> tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>send_transaction(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">to</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>)
 
 <span style="color:#66d9ef">print</span>(send)
-</code></pre></div><h2 id="오류-내용">오류 내용</h2>
+</code></pre></div><h2 id="위-제공하는-소스에서-trc10-토큰을-송신-하려면-아래와-같이-하면-될-거라-생각-했음">위 제공하는 소스에서 TRC10 토큰을 송신 하려면 아래와 같이 하면 될 거라 생각 했음</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> Tron
+<span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> HttpProvider
+
+full_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
+solidity_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
+event_server <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
+
+tron <span style="color:#f92672">=</span> Tron(full_node<span style="color:#f92672">=</span>full_node,
+            solidity_node<span style="color:#f92672">=</span>solidity_node,
+            event_server<span style="color:#f92672">=</span>event_server)
+
+
+tron<span style="color:#f92672">.</span>private_key <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">private_key</span><span style="color:#e6db74">&#39;</span>
+tron<span style="color:#f92672">.</span>default_address <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">default address</span><span style="color:#e6db74">&#39;</span>
+
+<span style="color:#75715e"># added message</span>
+send <span style="color:#f92672">=</span> tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>send_token(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">to</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">token_id</span><span style="color:#e6db74">&#39;</span>)
+
+<span style="color:#66d9ef">print</span>(send)
+</code></pre></div><h2 id="하지만-오류-발생">하지만&hellip;. 오류 발생.</h2>
 <pre><code>Traceback (most recent call last):
   .....
     send = tron.trx.send_token(to, amount, token_id)
@@ -327,7 +347,7 @@ tron.default_address = 'default address'
 tron.trx.tron.private_key = 'private_key'
 
 # added message
-send = tron.trx.send_transaction('to', 1)
+send = tron.trx.send_token('to', 1, 'token_id')
 
 print(send)
 </code></pre><h2 id="송금결과-console-print">송금결과 Console Print</h2>
@@ -336,10 +356,9 @@ print(send)
 <p><img src="/img/tips/tron-01.PNG" alt="송금결과"></p>
 <p>[결론]</p>
 <ul>
+<li>TRC 송금 예시는 있었고, TRC10 송금 예시가 없길래 임의로 분석해서 진행한 거 였는데</li>
 <li>해결하고 보니 내가 API를 잘 못 이해 했거나</li>
 <li>TRON Python API를 만들다 만 느낌이 든다.</li>
-<li>예시가 있는건 좋은데 어떤 값이 들어가야 되는지가 없어서 없었다</li>
-<li>내가 만들 때는 이런거 감안해서 만들자~</li>
 </ul>
               
             </div>
