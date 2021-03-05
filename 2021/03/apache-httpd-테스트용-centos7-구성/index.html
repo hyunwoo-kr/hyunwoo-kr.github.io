@@ -7,38 +7,38 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.64.0 with theme Tranquilpeak 0.4.8-BETA">
 <meta name="author" content="Hyunwoo Gwak">
-<meta name="keywords" content="tech, development, hyunwoo">
-<meta name="description" content="Go 언어로 Rest API 서버 구축하기">
+<meta name="keywords" content="vagrant, hyper-v, development, hyunwoo">
+<meta name="description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
 
 
-<meta property="og:description" content="Go 언어로 Rest API 서버 구축하기">
+<meta property="og:description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Go">
-<meta name="twitter:title" content="Go">
-<meta property="og:url" content="https://hyunwoo-kr.github.io/2020/02/go/">
-<meta property="twitter:url" content="https://hyunwoo-kr.github.io/2020/02/go/">
+<meta property="og:title" content="Apache HTTPD 테스트용 Centos7 구성">
+<meta name="twitter:title" content="Apache HTTPD 테스트용 Centos7 구성">
+<meta property="og:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
+<meta property="twitter:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
 <meta property="og:site_name" content="현우의 기술 블로그">
-<meta property="og:description" content="Go 언어로 Rest API 서버 구축하기">
-<meta name="twitter:description" content="Go 언어로 Rest API 서버 구축하기">
+<meta property="og:description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
+<meta name="twitter:description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
 <meta property="og:locale" content="ko-kr">
 
   
-    <meta property="article:published_time" content="2020-02-01T12:04:30">
+    <meta property="article:published_time" content="2021-03-05T11:22:13">
   
   
-    <meta property="article:modified_time" content="2020-02-01T12:04:30">
+    <meta property="article:modified_time" content="2021-03-05T11:22:13">
   
-  
-  
-    
-      <meta property="article:section" content="interesting">
-    
   
   
     
-      <meta property="article:tag" content="go">
+      <meta property="article:section" content="hyper-v">
     
-      <meta property="article:tag" content="microservice">
+  
+  
+    
+      <meta property="article:tag" content="hyper-v">
+    
+      <meta property="article:tag" content="centos7">
     
   
 
@@ -59,14 +59,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=640">
 
 
-    <title>Go</title>
+    <title>Apache HTTPD 테스트용 Centos7 구성</title>
 
     <link rel="icon" href="/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://hyunwoo-kr.github.io/2020/02/go/">
+    <link rel="canonical" href="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -219,15 +219,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Go
+      Apache HTTPD 테스트용 Centos7 구성
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2020-02-01T12:04:30&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-03-05T11:22:13&#43;09:00">
         
-  2020년 2월 1일
+  2021년 3월 5일
 
       </time>
     
@@ -236,7 +236,7 @@ if (!doNotTrack) {
   
     <span>in</span>
     
-      <a class="category-link" href="/categories/interesting">interesting</a>
+      <a class="category-link" href="/categories/hyper-v">hyper-v</a>
     
   
 
@@ -246,11 +246,22 @@ if (!doNotTrack) {
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Go 언어로 Rest API 서버 구축하기</p>
-<blockquote>
-<p>학습할 서적</p>
-</blockquote>
-<p><img src="/img/books/go-microservice.jpg" alt="공부할 책"></p>
+              <p>로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?</p>
+<p>vagrant 를 사용하여, 한 줄 한 줄 명령어를 통해 CentOS7을 설치 한다.
+[목표]</p>
+<ul>
+<li>Hyper-V Nat 네트워크 구성을 활용하여</li>
+<li>CentOS7을 Hyper-V에 설치 해 보자</li>
+</ul>
+<p>[사전준비]</p>
+<ul>
+<li>Hyper-V Nat 네트워크 구성</li>
+<li>Vagrant 설치 및 사용법 숙지</li>
+</ul>
+<h2 id="vagrant-로-hyper-v에-centos7-프로비저닝하기">Vagrant 로 Hyper-v에 Centos7 프로비저닝하기</h2>
+<div class="alert danger no-icon ">
+  <p>반드시, Windows PowerShell의 관리자 권한으로 아래 명령을 수행 해야 함</p>
+</div>
               
             </div>
           </div>
@@ -262,9 +273,9 @@ if (!doNotTrack) {
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="/tags/go/">go</a>
+  <a class="tag tag--primary tag--small" href="/tags/hyper-v/">hyper-v</a>
 
-  <a class="tag tag--primary tag--small" href="/tags/microservice/">microservice</a>
+  <a class="tag tag--primary tag--small" href="/tags/centos7/">centos7</a>
 
                   </div>
                 
@@ -277,7 +288,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/%EC%83%88%ED%95%B4-%EB%AA%A9%ED%91%9C/" data-tooltip="새해 목표">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/2021%EB%85%843%EC%9B%94-%EB%AA%A9%ED%91%9C/" data-tooltip="2021년3월 목표">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">이전</span>
@@ -285,7 +296,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/02/tron-python-api%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%86%A1%EA%B8%88/" data-tooltip="TRON - Python API를 사용한 송금">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                   <i class="fa fa-angle-right"></i>
@@ -303,13 +314,13 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2020/02/go/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2020/02/go/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -347,7 +358,7 @@ if (!doNotTrack) {
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/01/%EC%83%88%ED%95%B4-%EB%AA%A9%ED%91%9C/" data-tooltip="새해 목표">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/2021%EB%85%843%EC%9B%94-%EB%AA%A9%ED%91%9C/" data-tooltip="2021년3월 목표">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">이전</span>
@@ -355,7 +366,7 @@ if (!doNotTrack) {
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2020/02/tron-python-api%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%86%A1%EA%B8%88/" data-tooltip="TRON - Python API를 사용한 송금">
+                <a class="post-action-btn btn btn--disabled">
               
                   <span class="hide-xs hide-sm text-small icon-mr">다음</span>
                   <i class="fa fa-angle-right"></i>
@@ -373,13 +384,13 @@ if (!doNotTrack) {
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2020/02/go/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2020/02/go/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -403,13 +414,13 @@ if (!doNotTrack) {
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhyunwoo-kr.github.io%2F2020%2F02%2Fgo%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhyunwoo-kr.github.io%2F2020%2F02%2Fgo%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>

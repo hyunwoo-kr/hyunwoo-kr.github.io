@@ -94,7 +94,7 @@ if (!doNotTrack) {
     
     
       
-        <img class="header-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=90" alt="" />
+        <img class="header-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=90" alt="Author&#39;s picture" />
       
     
     </a>
@@ -106,7 +106,7 @@ if (!doNotTrack) {
     
       <div class="sidebar-profile">
         <a href="/#about">
-          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=110" alt="" />
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=110" alt="Author&#39;s picture" />
         </a>
         <h4 class="sidebar-profile-name">Hyunwoo Gwak</h4>
         
@@ -198,25 +198,29 @@ if (!doNotTrack) {
 
         <div id="tags-archives" class="main-content-wrap">
           <form id="filter-form" action="#">
-            <input name="tag" type="text" class="form-control input--xlarge" placeholder="" autofocus="autofocus">
+            <input name="tag" type="text" class="form-control input--xlarge" placeholder="Search tag" autofocus="autofocus">
           </form>
           <h4 class="archive-result text-color-base text-xlarge"
-              data-message-zero=""
-              data-message-one=""
-              data-message-other=""></h4>
+              data-message-zero="no tag found"
+              data-message-one="1 tag found"
+              data-message-other="{n} tags found"></h4>
 
             <section>
+              
+                <a class="tag tag--primary tag--small" href="#hyper-v-list" data-tag="hyper-v">
+                  hyper-v
+                </a>
               
                 <a class="tag tag--primary tag--small" href="#plan-list" data-tag="plan">
                   plan
                 </a>
               
-                <a class="tag tag--primary tag--small" href="#go-list" data-tag="go">
-                  go
+                <a class="tag tag--primary tag--small" href="#centos7-list" data-tag="centos7">
+                  centos7
                 </a>
               
-                <a class="tag tag--primary tag--small" href="#hyper-v-list" data-tag="hyper-v">
-                  hyper-v
+                <a class="tag tag--primary tag--small" href="#go-list" data-tag="go">
+                  go
                 </a>
               
                 <a class="tag tag--primary tag--small" href="#microservice-list" data-tag="microservice">
@@ -254,6 +258,35 @@ if (!doNotTrack) {
             </section>
             <section class="boxes">
               
+                <div id="hyper-v-list" class="archive box" data-tag="hyper-v">
+                  <h4 class="archive-title">
+                    <a class="link-unstyled" href="hyper-v">
+                      hyper-v (2)
+                    </a>
+                  </h4>
+                  <ul class="archive-posts">
+                    
+                      <li class="archive-post">
+                        <a class="archive-post-title" href="https://hyunwoo-kr.github.io/2021/03/windows10-hyper-v-nat-network-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/">
+                          Windows10 Hyper-V Nat Network 구성하기
+                        </a>
+                        <span class="archive-post-date"> - 
+  2021년 3월 4일
+</span>
+                      </li>
+                    
+                      <li class="archive-post">
+                        <a class="archive-post-title" href="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
+                          Apache HTTPD 테스트용 Centos7 구성
+                        </a>
+                        <span class="archive-post-date"> - 
+  2021년 3월 5일
+</span>
+                      </li>
+                    
+                  </ul>
+                </div>
+              
                 <div id="plan-list" class="archive box" data-tag="plan">
                   <h4 class="archive-title">
                     <a class="link-unstyled" href="plan">
@@ -267,7 +300,7 @@ if (!doNotTrack) {
                           새해 목표
                         </a>
                         <span class="archive-post-date"> - 
-   31, 2020
+  2020년 1월 31일
 </span>
                       </li>
                     
@@ -276,7 +309,27 @@ if (!doNotTrack) {
                           2021년3월 목표
                         </a>
                         <span class="archive-post-date"> - 
-   4, 2021
+  2021년 3월 4일
+</span>
+                      </li>
+                    
+                  </ul>
+                </div>
+              
+                <div id="centos7-list" class="archive box" data-tag="centos7">
+                  <h4 class="archive-title">
+                    <a class="link-unstyled" href="centos7">
+                      centos7 (1)
+                    </a>
+                  </h4>
+                  <ul class="archive-posts">
+                    
+                      <li class="archive-post">
+                        <a class="archive-post-title" href="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1/">
+                          Apache HTTPD 테스트용 Centos7 구성
+                        </a>
+                        <span class="archive-post-date"> - 
+  2021년 3월 5일
 </span>
                       </li>
                     
@@ -296,27 +349,7 @@ if (!doNotTrack) {
                           Go
                         </a>
                         <span class="archive-post-date"> - 
-   1, 2020
-</span>
-                      </li>
-                    
-                  </ul>
-                </div>
-              
-                <div id="hyper-v-list" class="archive box" data-tag="hyper-v">
-                  <h4 class="archive-title">
-                    <a class="link-unstyled" href="hyper-v">
-                      hyper-v (1)
-                    </a>
-                  </h4>
-                  <ul class="archive-posts">
-                    
-                      <li class="archive-post">
-                        <a class="archive-post-title" href="https://hyunwoo-kr.github.io/2021/03/windows10-hyper-v-nat-network-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/">
-                          Windows10 Hyper-V Nat Network 구성하기
-                        </a>
-                        <span class="archive-post-date"> - 
-   4, 2021
+  2020년 2월 1일
 </span>
                       </li>
                     
@@ -336,7 +369,7 @@ if (!doNotTrack) {
                           Go
                         </a>
                         <span class="archive-post-date"> - 
-   1, 2020
+  2020년 2월 1일
 </span>
                       </li>
                     
@@ -356,7 +389,7 @@ if (!doNotTrack) {
                           Windows10 Hyper-V Nat Network 구성하기
                         </a>
                         <span class="archive-post-date"> - 
-   4, 2021
+  2021년 3월 4일
 </span>
                       </li>
                     
@@ -376,7 +409,7 @@ if (!doNotTrack) {
                           Windows10 Hyper-V Nat Network 구성하기
                         </a>
                         <span class="archive-post-date"> - 
-   4, 2021
+  2021년 3월 4일
 </span>
                       </li>
                     
@@ -396,7 +429,7 @@ if (!doNotTrack) {
                           TRON - Python API를 사용한 송금
                         </a>
                         <span class="archive-post-date"> - 
-   3, 2020
+  2020년 2월 3일
 </span>
                       </li>
                     
@@ -416,7 +449,7 @@ if (!doNotTrack) {
                           TRON - Python API를 사용한 송금
                         </a>
                         <span class="archive-post-date"> - 
-   3, 2020
+  2020년 2월 3일
 </span>
                       </li>
                     
@@ -436,7 +469,7 @@ if (!doNotTrack) {
                           TRON - Python API를 사용한 송금
                         </a>
                         <span class="archive-post-date"> - 
-   3, 2020
+  2020년 2월 3일
 </span>
                       </li>
                     
@@ -456,7 +489,7 @@ if (!doNotTrack) {
                           TRON - Python API를 사용한 송금
                         </a>
                         <span class="archive-post-date"> - 
-   3, 2020
+  2020년 2월 3일
 </span>
                       </li>
                     
@@ -476,7 +509,7 @@ if (!doNotTrack) {
                           Windows10 Hyper-V Nat Network 구성하기
                         </a>
                         <span class="archive-post-date"> - 
-   4, 2021
+  2021년 3월 4일
 </span>
                       </li>
                     
@@ -487,7 +520,7 @@ if (!doNotTrack) {
          </div>
         <footer id="footer" class="main-content-wrap">
   <span class="copyrights">
-    &copy; 2021 <a href="https://github.com/hyunwoo-kr">hyunwoo</a>. 
+    &copy; 2021 <a href="https://github.com/hyunwoo-kr">hyunwoo</a>. All Rights Reserved
   </span>
 </footer>
 
@@ -499,7 +532,7 @@ if (!doNotTrack) {
       <i class="fa fa-remove"></i>
     </div>
     
-      <img id="about-card-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=110" alt="" />
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=110" alt="Author&#39;s picture" />
     
     <h4 id="about-card-name">Hyunwoo Gwak</h4>
     
