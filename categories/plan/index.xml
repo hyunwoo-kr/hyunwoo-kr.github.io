@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>PLAN on 현우의 기술 블로그</title>
+    <title>plan on 현우의 기술 블로그</title>
     <link>https://hyunwoo-kr.github.io/categories/plan/</link>
-    <description>Recent content in PLAN on 현우의 기술 블로그</description>
+    <description>Recent content in plan on 현우의 기술 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
+    <language>ko-kr</language>
     <lastBuildDate>Thu, 04 Mar 2021 18:01:05 +0900</lastBuildDate>
     
 	<atom:link href="https://hyunwoo-kr.github.io/categories/plan/index.xml" rel="self" type="application/rss+xml" />
