@@ -6,10 +6,55 @@
     <description>Recent content in Tags on 현우의 기술 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Mon, 03 Feb 2020 17:51:02 +0900</lastBuildDate>
+    <lastBuildDate>Thu, 04 Mar 2021 18:01:05 +0900</lastBuildDate>
     
 	<atom:link href="https://hyunwoo-kr.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>plan</title>
+      <link>https://hyunwoo-kr.github.io/tags/plan/</link>
+      <pubDate>Thu, 04 Mar 2021 18:01:05 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/plan/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>hyper-v</title>
+      <link>https://hyunwoo-kr.github.io/tags/hyper-v/</link>
+      <pubDate>Thu, 04 Mar 2021 16:42:05 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/hyper-v/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>nat network</title>
+      <link>https://hyunwoo-kr.github.io/tags/nat-network/</link>
+      <pubDate>Thu, 04 Mar 2021 16:42:05 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/nat-network/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>PowerShell</title>
+      <link>https://hyunwoo-kr.github.io/tags/powershell/</link>
+      <pubDate>Thu, 04 Mar 2021 16:42:05 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/powershell/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Windows 10</title>
+      <link>https://hyunwoo-kr.github.io/tags/windows-10/</link>
+      <pubDate>Thu, 04 Mar 2021 16:42:05 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/tags/windows-10/</guid>
+      <description></description>
+    </item>
     
     <item>
       <title>self.tron.private_key error</title>
@@ -62,15 +107,6 @@
       <pubDate>Sat, 01 Feb 2020 12:04:30 +0900</pubDate>
       
       <guid>https://hyunwoo-kr.github.io/tags/microservice/</guid>
-      <description></description>
-    </item>
-    
-    <item>
-      <title>TASK</title>
-      <link>https://hyunwoo-kr.github.io/tags/task/</link>
-      <pubDate>Fri, 31 Jan 2020 13:17:14 +0900</pubDate>
-      
-      <guid>https://hyunwoo-kr.github.io/tags/task/</guid>
       <description></description>
     </item>
     

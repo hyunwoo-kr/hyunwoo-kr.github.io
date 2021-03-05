@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Windows 10 on 현우의 기술 블로그</title>
+    <link>https://hyunwoo-kr.github.io/tags/windows-10/</link>
+    <description>Recent content in Windows 10 on 현우의 기술 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Mar 2021 16:42:05 +0900</lastBuildDate>
+    
+	<atom:link href="https://hyunwoo-kr.github.io/tags/windows-10/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Windows10 Hyper-V Nat Network 구성하기</title>
+      <link>https://hyunwoo-kr.github.io/2021/03/windows10-hyper-v-nat-network-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/</link>
+      <pubDate>Thu, 04 Mar 2021 16:42:05 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/2021/03/windows10-hyper-v-nat-network-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/</guid>
+      <description>&lt;p&gt;Windows 10, Hyper-v 를 사용할 때 Network 구성을 정형화 할 수 있을까?&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>

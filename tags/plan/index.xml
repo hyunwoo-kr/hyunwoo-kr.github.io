@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>plan on 현우의 기술 블로그</title>
+    <link>https://hyunwoo-kr.github.io/tags/plan/</link>
+    <description>Recent content in plan on 현우의 기술 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 04 Mar 2021 18:01:05 +0900</lastBuildDate>
+    
+	<atom:link href="https://hyunwoo-kr.github.io/tags/plan/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>2021년3월 목표</title>
+      <link>https://hyunwoo-kr.github.io/2021/03/2021%EB%85%843%EC%9B%94-%EB%AA%A9%ED%91%9C/</link>
+      <pubDate>Thu, 04 Mar 2021 18:01:05 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/2021/03/2021%EB%85%843%EC%9B%94-%EB%AA%A9%ED%91%9C/</guid>
+      <description>&lt;p&gt;1주일에 한 번 글쓰기&lt;/p&gt;</description>
+    </item>
+    
+    <item>
+      <title>새해 목표</title>
+      <link>https://hyunwoo-kr.github.io/2020/01/%EC%83%88%ED%95%B4-%EB%AA%A9%ED%91%9C/</link>
+      <pubDate>Fri, 31 Jan 2020 13:17:14 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/2020/01/%EC%83%88%ED%95%B4-%EB%AA%A9%ED%91%9C/</guid>
+      <description>&lt;p&gt;하루에 한 번 글쓰기&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
