@@ -7,26 +7,26 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="generator" content="Hugo 0.64.0 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Hyunwoo Gwak">
-<meta name="keywords" content="vagrant, hyper-v, development, hyunwoo">
-<meta name="description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
+<meta name="keywords" content="openssl 1.1.1 업그레이드, development, hyunwoo">
+<meta name="description" content="CentOS 7에 openssl 1.1.1 컴파일 설치 해 보자~">
 
 
-<meta property="og:description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
+<meta property="og:description" content="CentOS 7에 openssl 1.1.1 컴파일 설치 해 보자~">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Apache HTTPD 테스트용 Centos7 구성 - 1차">
-<meta name="twitter:title" content="Apache HTTPD 테스트용 Centos7 구성 - 1차">
-<meta property="og:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">
-<meta property="twitter:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">
+<meta property="og:title" content="Apache HTTPD 테스트용 Centos7 구성 - 2차">
+<meta name="twitter:title" content="Apache HTTPD 테스트용 Centos7 구성 - 2차">
+<meta property="og:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/">
+<meta property="twitter:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/">
 <meta property="og:site_name" content="현우의 기술 블로그">
-<meta property="og:description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
-<meta name="twitter:description" content="로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?">
+<meta property="og:description" content="CentOS 7에 openssl 1.1.1 컴파일 설치 해 보자~">
+<meta name="twitter:description" content="CentOS 7에 openssl 1.1.1 컴파일 설치 해 보자~">
 <meta property="og:locale" content="en-us">
 
   
-    <meta property="article:published_time" content="2021-03-05T11:22:13">
+    <meta property="article:published_time" content="2021-03-08T13:41:42">
   
   
-    <meta property="article:modified_time" content="2021-03-05T11:22:13">
+    <meta property="article:modified_time" content="2021-03-08T13:41:42">
   
   
   
@@ -36,9 +36,7 @@
   
   
     
-      <meta property="article:tag" content="hyper-v">
-    
-      <meta property="article:tag" content="centos7">
+      <meta property="article:tag" content="openssl 1.1.1 컴파일">
     
   
 
@@ -59,14 +57,14 @@
   <meta property="twitter:image" content="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=640">
 
 
-    <title>Apache HTTPD 테스트용 Centos7 구성 - 1차</title>
+    <title>Apache HTTPD 테스트용 Centos7 구성 - 2차</title>
 
     <link rel="icon" href="/favicon.png">
     
 
     
 
-    <link rel="canonical" href="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">
+    <link rel="canonical" href="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/">
 
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
@@ -219,15 +217,15 @@ if (!doNotTrack) {
             <div class="post-header main-content-wrap text-left">
   
     <h1 class="post-title" itemprop="headline">
-      Apache HTTPD 테스트용 Centos7 구성 - 1차
+      Apache HTTPD 테스트용 Centos7 구성 - 2차
     </h1>
   
   
   <div class="postShorten-meta post-meta">
     
-      <time itemprop="datePublished" datetime="2021-03-05T11:22:13&#43;09:00">
+      <time itemprop="datePublished" datetime="2021-03-08T13:41:42&#43;09:00">
         
-  2021년 3월 5일
+  2021년 3월 8일
 
       </time>
     
@@ -246,170 +244,72 @@ if (!doNotTrack) {
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>로컬 PC로 가상머신을 커맨드라인 명령을 통해 진행 할 수 있을까?</p>
+              <p>CentOS 7에 openssl 1.1.1 컴파일 설치 해 보자~</p>
+<div class="alert danger no-icon ">
+  <p>Apache, Nginx와 같은 웹서버에서 TLS 1.3 프로토콜을 사용하기 위해서 반드시 openssl 업그레이드 필요하며, CentOS 7에서는 openssl 1.1.1g를 컴파일 설치해야 사용 가능 함</p>
+</div>
 <p>[목표]</p>
 <ul>
-<li>Hyper-V Nat 네트워크 구성을 활용하여</li>
-<li>CentOS7을 Hyper-V에 설치 해 보자</li>
+<li>Hyper-V에 설치된 CentOS 7에</li>
+<li>openssl 1.1.1g 컴파일 설치하기</li>
 </ul>
 <p>[사전준비]</p>
 <ul>
 <li><a href="/2021/03/windows10-hyper-v-nat-network-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/">Windows10 Hyper-V Nat Network 구성하기</a></li>
-<li>Vagrant 설치 및 사용법 숙지</li>
+<li><a href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">Apache HTTPD 테스트용 Centos7 구성 - 1차</a></li>
 </ul>
-<p>[소스]</p>
-<h2 id="vagrant-로-hyper-v에-centos7-프로비저닝하기">Vagrant 로 Hyper-v에 Centos7 프로비저닝하기</h2>
-<div class="alert danger no-icon ">
-  <p>반드시, Windows PowerShell의 관리자 권한으로 아래 명령을 수행 해야 함</p>
-</div>
-<h3 id="step1-vagrant-설치">Step1 Vagrant 설치</h3>
-<div class="alert success no-icon ">
-  <p><a href="https://www.vagrantup.com/downloads">Download Vagrant</a></p>
-</div>
-<p><img src="/img/hyper-v/vagrant01/download_vagrant.JPG" alt="download_vagrant"></p>
-<blockquote>
-<p>설치 확인</p>
-</blockquote>
-<pre><code>vagrant -version
-</code></pre><p><img src="/img/hyper-v/vagrant01/vagrant_check.JPG" alt="vagrant_check"></p>
-<h3 id="step2-hyper-v용-centos7-box-다운로드-하기">Step2 Hyper-V용 centos/7 box 다운로드 하기</h3>
-<div class="alert success no-icon ">
-  <p>다운로드 주소: <a href="https://app.vagrantup.com/centos/boxes/7">https://app.vagrantup.com/centos/boxes/7</a></p>
-</div>
-<p><img src="/img/hyper-v/vagrant01/vagrant_box_download.png" alt="다운로드"></p>
-<h3 id="step3-다운로드한-box-add-하기">Step3 다운로드한 box add 하기</h3>
-<div class="alert success no-icon ">
-  <p><ol>
-<li>q 드라이브,</li>
-<li>file:///Q:\vs_work\infra\vagrant_box\ 폴더에</li>
-<li>CentOS-7-x86_64-Vagrant-2004_01.HyperV.box 파일을 받았다고 가정.</li>
-</ol></p>
-</div>
-<pre><code>vagrant box add centos/7 file:///Q:\vs_work\infra\vagrant_box\CentOS-7-x86_64-Vagrant-2004_01.HyperV.box
-</code></pre><h3 id="step4-vagrant-프로젝트-생성">Step4 Vagrant 프로젝트 생성</h3>
-<p><img src="/img/hyper-v/vagrant01/project_dir.JPG" alt="폴더구조"></p>
-<ul>
-<li>Vagrantfile: 베이그런트 이미지 설정파일</li>
-<li>configure-static-ip.sh: 사설 고정IP 할당 스크립트</li>
-<li>.vimrc: vim 설정파일</li>
-</ul>
-<h3 id="step5-vagrantfile-생성">Step5 Vagrantfile 생성</h3>
-<blockquote>
-<p>Copy&amp;Paste를 진행하고, &lt;비밀번호&gt;만 사용하고 싶은 걸로 대체한다.</p>
-<p>&lt;비밀번호&gt;는 root 패스워드로 설정된다</p>
-</blockquote>
-<pre><code>Vagrant.configure(&quot;2&quot;) do |config|
-    config.vm.box = &quot;centos/7&quot;
-    config.vm.box_check_update = true
+<h2 id="openssl-기존-버전-확인">openssl 기존 버전 확인</h2>
+<pre><code>openssl version
+</code></pre><h2 id="기존-openssl-삭제">기존 openssl 삭제</h2>
+<pre><code>yum remove openssl
+</code></pre><h2 id="기본-라이브러리-설치">기본 라이브러리 설치</h2>
+<pre><code>yum -y install gcc gcc-c++ pcre-devel zlib-devel perl wget
+</code></pre><h2 id="다운로드-및-config-설정">다운로드 및 config 설정</h2>
+<pre><code># 다운로드
+cd /usr/local/src
+wget https://www.openssl.org/source/openssl-1.1.1g.tar.gz
+tar xvfz openssl-1.1.1g.tar.gz
+cd openssl-1.1.1g
 
-    config.vm.network &quot;public_network&quot;, auto_config: false,  bridge: &quot;dmz&quot;
-    config.vm.hostname = &quot;dzm-web1&quot;
+# config 설정
+./config \
+--prefix=/usr/local/ssl \
+--openssldir=/usr/local/ssl shared zlib
 
-    config.vm.synced_folder &quot;.&quot;, &quot;/vagrant&quot;
+# 컴파일 및 설치
+make &amp;&amp; make install
+</code></pre><h2 id="openssl-111gconf-생성">openssl-1.1.1g.conf 생성</h2>
+<pre><code>vi /etc/ld.so.conf.d/openssl-1.1.1g.conf
 
-    config.vm.provider &quot;hyperv&quot; do |vb|
-        vb.auto_start_action= &quot;StartIfRunning&quot;
-        vb.auto_stop_action = &quot;TurnOff&quot;
-        vb.cpus = 1
-        vb.memory = 1024*2
-        vb.vmname = &quot;dzm-web1&quot;
-    end
+# 파일이 열리면 아래 내용 추가 후 저장
+----
+/usr/local/ssl/lib
+----
+</code></pre><h2 id="shared-object-동적-라이브러리-연결-확인">shared object (동적 라이브러리 연결) 확인</h2>
+<pre><code>ldconfig -v
+</code></pre><h2 id="심볼릭링크-걸기">심볼릭링크 걸기</h2>
+<pre><code># 동적 라이브러리 심볼릭링크
+ln -s /usr/local/ssl/lib/libssl.so.1.1 /usr/lib64/libssl.so.1.1
+ln -s /usr/local/ssl/lib/libcrypto.so.1.1 /usr/lib64/libcrypto.so.1.1
 
-    config.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL
-        sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
-        sed -i 's/#PermitRootLogin yes/PermitRootLogin yes/g' /etc/ssh/sshd_config
-        sudo su &amp;&amp; echo &quot;&lt;비밀번호&gt;&quot;  | passwd --stdin root
+# openssl 심볼릭링크
+ln -s /usr/local/ssl/bin/openssl /bin/openssl
+</code></pre><h2 id="openssl-버전-확인">openssl 버전 확인</h2>
+<pre><code>openssl version
 
-        # systemctl restart sshd
-        # mkdir -p /root/.ssh
-        # chmod -R 700 /root/.ssh
-        # cat /vagrant/scripts/authorized_keys &gt;&gt; /root/.ssh/authorized_keys
-        # chmod 600 /root/.ssh/authorized_keys
-    SHELL
+----------------------
+OpenSSL 1.1.1g  21 Apr 2020
+</code></pre><h2 id="openssl-지원-프로토콜-확인">openssl 지원 프로토콜 확인</h2>
+<pre><code>openssl ciphers -v | awk '{print $2}' | sort | uniq
 
-    config.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL
-        /vagrant/scripts/configure-static-ip.sh
-        shutdown -h now
-    SHELL
-
-    config.trigger.after :up  do |trigger|
-        trigger.info = &quot;vm shutdown wating 10 seconds&quot;
-        trigger.run = {inline: &quot;sleep 10&quot;}
-    end
-
-    config.trigger.after :up  do |trigger|
-        trigger.info = &quot;START VM&quot;
-        trigger.run = {inline: &quot;Start-VM -Name dzm-web1&quot;}
-    end
-end
-</code></pre><h3 id="step6-configure-static-ipsh">Step6 configure-static-ip.sh</h3>
-<blockquote>
-<p>고정IP 161.100.6.10 으로 설정</p>
-</blockquote>
-<pre><code>#!/bin/sh
-
-echo 'Setting static IP address for Hyper-V...'
-
-cat &lt;&lt; EOF &gt; /etc/sysconfig/network-scripts/ifcfg-eth0
-DEVICE=eth0
-BOOTPROTO=none
-ONBOOT=yes
-PREFIX=24
-IPADDR=161.100.6.10
-GATEWAY=161.100.6.1
-DNS1=8.8.8.8
-EOF
-</code></pre><h3 id="step8-hyper-v-로--centos7-만들기">Step8 hyper-v 로  CentOS/7 만들기</h3>
-<div class="alert danger no-icon ">
-  <p><ol>
-<li>반드시, PowerShell 관리자 모드</li>
-<li>/2_centos7_install/vagrant 폴더로 이동 후</li>
-<li>아래 명령어를 수행 해야 함</li>
-</ol></p>
-</div>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">vagrant up
-</code></pre></div><p><img src="/img/hyper-v/vagrant01/final_result.png" alt="result"></p>
-<p><img src="/img/hyper-v/vagrant01/result_hyperv.JPG" alt="result_hyperv"></p>
-<h3 id="step9-console-접속">Step9 Console 접속</h3>
-<pre><code>ssh root@161.100.6.10
-</code></pre><h2 id="step10-os-운영체제-및-버전확인">Step10 OS 운영체제 및 버전확인</h2>
-<pre><code>grep . /etc/*-release
-</code></pre><p><img src="/img/hyper-v/vagrant01/os_version.JPG" alt="os_version"></p>
-<h2 id="step11-기본-패키지-설치-및-box-export">Step11 기본 패키지 설치 및 box export</h2>
-<p>Ingra 구성 테스트시, 매번 같은 패키지를 설치하는게 귀찮아서
-아래 기본 패키지를 설치한 box 를 export 하여 사용 하자</p>
-<blockquote>
-<p>기본 패키지 설치</p>
-</blockquote>
-<pre><code>yum groupinstall -y &quot;Development tools&quot;
-yum -y vim wget curl telnet net-tools bind-utils
-</code></pre><blockquote>
-<p>box export  하기</p>
-</blockquote>
-<pre><code>vagrant package --output CentOS-7-x86_64-Vagrant-Hyunwoo.HyperV.box
-</code></pre><blockquote>
-<p>export 한 box Add 하기</p>
-</blockquote>
-<pre><code>vagrant box add centos_base/7 ./CentOS-7-x86_64-Vagrant-Hyunwoo.HyperV.box
-</code></pre><p><img src="/img/hyper-v/vagrant01/final_vagrant_box_add.png" alt="os_version"></p>
-<h2 id="step12-만들어-진-vm-삭제">Step12 만들어 진 VM 삭제</h2>
-<pre><code>vagrant destory -f
-</code></pre><h2 id="step13-vagrantfile-수정">Step13 Vagrantfile 수정</h2>
-<blockquote>
-<p>config.vm.box 의 값이 centos_base/7 으로 변경 되었고,
-config.vm.synced_folder의 값이 disabled: true 추가 되었다.</p>
-</blockquote>
-<pre><code>Vagrant.configure(&quot;2&quot;) do |config|
-    config.vm.box = &quot;centos_base/7&quot;
-
-    (생략)
-
-    config.vm.synced_folder &quot;.&quot;, &quot;/vagrant&quot;, disabled: true
-
-    (생략)
-end
-</code></pre><div class="alert success no-icon ">
-  <p>수정 후 다시, vagrant up 하여 VM을 생성한다</p>
+----------------------
+SSLv3
+TLSv1
+TLSv1.2
+TLSv1.3
+</code></pre><h2 id="개선점">개선점</h2>
+<div class="alert info no-icon ">
+  <p>Ansible 을 이용해서 동일한 구성 만드는걸 code 로 관리해 보자</p>
 </div>
               
             </div>
@@ -422,9 +322,7 @@ end
                   <div class="post-footer-tags">
                     <span class="text-color-light text-small">TAGGED IN</span><br/>
                     
-  <a class="tag tag--primary tag--small" href="/tags/hyper-v/">hyper-v</a>
-
-  <a class="tag tag--primary tag--small" href="/tags/centos7/">centos7</a>
+  <a class="tag tag--primary tag--small" href="/tags/openssl-1.1.1-%EC%BB%B4%ED%8C%8C%EC%9D%BC/">openssl 1.1.1 컴파일</a>
 
                   </div>
                 
@@ -437,7 +335,7 @@ end
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/2021%EB%85%843%EC%9B%94-%EB%AA%A9%ED%91%9C/" data-tooltip="2021년3월 목표">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 1차">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -445,7 +343,7 @@ end
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 2차">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 3차">
               
                   <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                   <i class="fa fa-angle-right"></i>
@@ -463,13 +361,13 @@ end
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -507,7 +405,7 @@ end
           
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/2021%EB%85%843%EC%9B%94-%EB%AA%A9%ED%91%9C/" data-tooltip="2021년3월 목표">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 1차">
               
                   <i class="fa fa-angle-left"></i>
                   <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
@@ -515,7 +413,7 @@ end
             </li>
             <li class="post-action">
               
-                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 2차">
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 3차">
               
                   <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
                   <i class="fa fa-angle-right"></i>
@@ -533,13 +431,13 @@ end
         </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/">
               <i class="fa fa-facebook-official"></i>
             </a>
           </li>
         
           <li class="post-action hide-xs">
-            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/">
               <i class="fa fa-twitter"></i>
             </a>
           </li>
@@ -563,13 +461,13 @@ end
   <ul class="share-options">
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1-1%25EC%25B0%25A8%2F">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1-2%25EC%25B0%25A8%2F">
           <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
         </a>
       </li>
     
       <li class="share-option">
-        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1-1%25EC%25B0%25A8%2F">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1-2%25EC%25B0%25A8%2F">
           <i class="fa fa-twitter"></i><span>Share on Twitter</span>
         </a>
       </li>

@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    
+    <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="generator" content="Hugo 0.64.0 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="author" content="Hyunwoo Gwak">
+<meta name="keywords" content="WEB, development, hyunwoo">
+<meta name="description" content="CentOS 7에 Apache HTTPD 2.4.X 컴파일 설치 해 보자">
+
+
+<meta property="og:description" content="CentOS 7에 Apache HTTPD 2.4.X 컴파일 설치 해 보자">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Apache HTTPD 테스트용 Centos7 구성 - 3차">
+<meta name="twitter:title" content="Apache HTTPD 테스트용 Centos7 구성 - 3차">
+<meta property="og:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/">
+<meta property="twitter:url" content="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/">
+<meta property="og:site_name" content="현우의 기술 블로그">
+<meta property="og:description" content="CentOS 7에 Apache HTTPD 2.4.X 컴파일 설치 해 보자">
+<meta name="twitter:description" content="CentOS 7에 Apache HTTPD 2.4.X 컴파일 설치 해 보자">
+<meta property="og:locale" content="en-us">
+
+  
+    <meta property="article:published_time" content="2021-03-08T16:41:42">
+  
+  
+    <meta property="article:modified_time" content="2021-03-08T16:41:42">
+  
+  
+  
+    
+      <meta property="article:section" content="web">
+    
+  
+  
+    
+      <meta property="article:tag" content="Apache httpd 2.4.X">
+    
+      <meta property="article:tag" content="compile">
+    
+  
+
+
+<meta name="twitter:card" content="summary">
+
+
+
+
+
+
+
+
+
+
+
+  <meta property="og:image" content="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=640">
+  <meta property="twitter:image" content="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=640">
+
+
+    <title>Apache HTTPD 테스트용 Centos7 구성 - 3차</title>
+
+    <link rel="icon" href="/favicon.png">
+    
+
+    
+
+    <link rel="canonical" href="https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/">
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" integrity="sha256-eZrrJcwDc/3uDhsdt61sL2oOBY362qM3lon1gyExkL0=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/jquery.fancybox.min.css" integrity="sha256-vuXZ9LGmmwtjqFX1F+EKin1ThZMub58gKULUyf0qECk=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.4/helpers/jquery.fancybox-thumbs.min.css" integrity="sha256-SEa4XYAHihTcEP1f5gARTB2K26Uk8PsndQYHQC1f4jU=" crossorigin="anonymous" />
+    
+    
+    <link rel="stylesheet" href="/css/style-twzjdbqhmnnacqs0pwwdzcdbt8yhv8giawvjqjmyfoqnvazl0dalmnhdkvp7.min.css" />
+    
+    
+
+    
+      
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-157759215-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+
+    
+    
+  </head>
+
+  <body>
+    <div id="blog">
+      <header id="header" data-behavior="1">
+  <i id="btn-open-sidebar" class="fa fa-lg fa-bars"></i>
+  <div class="header-title">
+    <a class="header-title-link" href="/">현우의 기술 블로그</a>
+  </div>
+  
+    
+      <a class="header-right-picture "
+         href="/#about">
+    
+    
+    
+      
+        <img class="header-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=90" alt="Author&#39;s picture" />
+      
+    
+    </a>
+  
+</header>
+
+      <nav id="sidebar" data-behavior="1">
+  <div class="sidebar-container">
+    
+      <div class="sidebar-profile">
+        <a href="/#about">
+          <img class="sidebar-profile-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=110" alt="Author&#39;s picture" />
+        </a>
+        <h4 class="sidebar-profile-name">Hyunwoo Gwak</h4>
+        
+          <h5 class="sidebar-profile-bio">매일 조금씩 꾸준히 글쓰기</h5>
+        
+      </div>
+    
+    <ul class="sidebar-buttons">
+      
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-home"></i>
+      
+      <span class="sidebar-button-desc">Home</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/categories">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-bookmark"></i>
+      
+      <span class="sidebar-button-desc">Categories</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/tags">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-tags"></i>
+      
+      <span class="sidebar-button-desc">Tags</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/archives">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-archive"></i>
+      
+      <span class="sidebar-button-desc">Archives</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="/#about">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-question"></i>
+      
+      <span class="sidebar-button-desc">About</span>
+    </a>
+  </li>
+
+  <li class="sidebar-button">
+    
+      <a class="sidebar-button-link " href="https://github.com/hyunwoo-kr" target="_blank" rel="noopener">
+    
+      <i class="sidebar-button-icon fa fa-lg fa-github"></i>
+      
+      <span class="sidebar-button-desc">GitHub</span>
+    </a>
+  </li>
+
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+    <ul class="sidebar-buttons">
+      
+
+    </ul>
+  </div>
+</nav>
+
+      
+
+      <div id="main" data-behavior="1"
+        class="
+               hasCoverMetaIn
+               ">
+        <article class="post" itemscope itemType="http://schema.org/BlogPosting">
+          
+          
+            <div class="post-header main-content-wrap text-left">
+  
+    <h1 class="post-title" itemprop="headline">
+      Apache HTTPD 테스트용 Centos7 구성 - 3차
+    </h1>
+  
+  
+  <div class="postShorten-meta post-meta">
+    
+      <time itemprop="datePublished" datetime="2021-03-08T16:41:42&#43;09:00">
+        
+  2021년 3월 8일
+
+      </time>
+    
+    
+  
+  
+    <span>in</span>
+    
+      <a class="category-link" href="/categories/web">web</a>
+    
+  
+
+  </div>
+
+</div>
+          
+          <div class="post-content markdown" itemprop="articleBody">
+            <div class="main-content-wrap">
+              <p>CentOS 7에 Apache HTTPD 2.4.X 컴파일 설치 해 보자</p>
+<p>[목표]</p>
+<ul>
+<li>Hyper-V에 설치된 CentOS 7에</li>
+<li>Apache HTTPD 2.4.x version을 컴파일 설치하기</li>
+</ul>
+<p>[사전준비]</p>
+<ul>
+<li><a href="/2021/03/windows10-hyper-v-nat-network-%EA%B5%AC%EC%84%B1%ED%95%98%EA%B8%B0/">Windows10 Hyper-V Nat Network 구성하기</a></li>
+<li><a href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-1%EC%B0%A8/">Apache HTTPD 테스트용 Centos7 구성 - 1차</a></li>
+</ul>
+<h1 id="why-컴파일">Why? &lsquo;컴파일&rsquo;</h1>
+<ul>
+<li>대부분의 리눅스 운영체제에는 Apache 웹서버가 기본으로 설치되어 있음</li>
+<li>하지만, 이것은 오래된 2.2.x version 으로</li>
+<li>보안패치도 안 되어 있는 등 실제 현업에서는 사용하지 않습니다.</li>
+</ul>
+<div class="alert success no-icon ">
+  <p>그래서 최신버전의 Apache 웹서버 2.4.x 를 컴파일 하여 설치 해서 사용 합니다.</p>
+</div>
+<h2 id="이전-version의-apache-웹서버-제거">이전 version의 Apache 웹서버 제거</h2>
+<pre><code>(CentOS) yum remove httpd httpd-*
+</code></pre><h2 id="빌드-환경설정">빌드 환경설정</h2>
+<p>컴파일에 필요한 GCC 컴파일러, libtoo,l, make 등을 설치 함</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">(</span>CentOS<span style="color:#f92672">)</span> yum install -y make gcc gcc-c++ autoconf automake libtool pkgconfig findutils
+</code></pre></div><h2 id="필요한-header-파일-설치">필요한 Header 파일 설치</h2>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#f92672">(</span>CentOS<span style="color:#f92672">)</span> yum install -y zlib-devel openldap-devel pcre-devel openssl-devel libxml2-devel
+</code></pre></div><h2 id="apache-웹서버---설치준비">Apache 웹서버 - 설치준비</h2>
+<ul>
+<li>Apr (Apache Portable Runtime) 설치(컴파일/빌드)</li>
+<li>expat 설치 (컴파일/빌드)</li>
+<li>Apr-utils 설치(컴파일/빌드)</li>
+<li>pcre 설치(컴파일/빌드)</li>
+</ul>
+<h3 id="apr-apache-portable-runtime-설치컴파일빌드">Apr (Apache Portable Runtime) 설치(컴파일/빌드)</h3>
+<p>다운로드 주소: <a href="https://apr.apache.org/download.cgi">https://apr.apache.org/download.cgi</a>
+<img src="/img/web/apache/apr_download.png" alt="APR다운로드"></p>
+<blockquote>
+<p>Apr 1.7.0 다운로드 및 압축풀기</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># HTTP Server 압축 푼 폴더의 srclib로 이동</span>
+cd /usr/local/src
+
+<span style="color:#75715e"># Apr 다운로드</span>
+wget https://downloads.apache.org//apr/apr-1.7.0.tar.gz
+
+<span style="color:#75715e"># 압축풀기 &amp; 폴더이름 변경 (apr-1.7.0 -&gt; apr)</span>
+tar xvfz apr-1.7.0.tar.gz <span style="color:#f92672">&amp;&amp;</span> rm -rf apr-1.7.0.tar.gz
+
+cd apr-1.7.0.tar.gz
+./configure --prefix<span style="color:#f92672">=</span>/usr/local/apr
+make &amp; make install
+</code></pre></div><blockquote>
+<p>설치 확인</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">/usr/local/apr/bin/apr-1-config --version
+
+--------------------------------------------
+1.7.0
+</code></pre></div><h3 id="expat-설치">expat 설치</h3>
+<div class="alert info no-icon ">
+  <p>다운로드 주소: <a href="https://github.com/libexpat/libexpat/releases">https://github.com/libexpat/libexpat/releases</a></p>
+</div>
+<blockquote>
+<p>다운로드 및 설치</p>
+</blockquote>
+<pre><code>cd /usr/local/src
+
+wget https://github.com/libexpat/libexpat/releases/download/R_2_2_9/expat-2.2.9.tar.gz
+
+tar xvfz expat-2.2.9.tar.gz
+
+cd expat-2.2.9
+
+./configure --prefix=/usr/local/expat
+
+make &amp; make install
+
+</code></pre><blockquote>
+<p>설치 확인</p>
+</blockquote>
+<pre><code>/usr/local/expat/bin/xmlwf -v
+
+------------------------------
+xmlwf using expat_2.2.9
+</code></pre><h3 id="apr-util-설치컴파일빌드">Apr-util 설치(컴파일/빌드)</h3>
+<div class="alert info no-icon ">
+  <p>다운로드 주소: <a href="https://apr.apache.org/download.cgi">https://apr.apache.org/download.cgi</a></p>
+</div>
+<p><img src="/img/web/apache/apr_util_download.png" alt="APR_UTIL다운로드"></p>
+<blockquote>
+<p>Apr-util 1.6.1 설치</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># HTTP Server 압축 푼 폴더의 srclib로 이동</span>
+cd /usr/local/src
+
+<span style="color:#75715e"># 다운로드</span>
+wget https://downloads.apache.org//apr/apr-util-1.6.1.tar.gz
+
+<span style="color:#75715e"># 압축풀기 &amp; 폴더이름 변경 (apr-util-1.6.1 -&gt; apr-util)</span>
+tar xvfz apr-util-1.6.1.tar.gz <span style="color:#f92672">&amp;&amp;</span> rm -rf apr-util-1.6.1.tar.gz
+
+cd apr-util-1.6.1
+
+./configure --prefix<span style="color:#f92672">=</span>/usr/local/apr-util <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--with-apr<span style="color:#f92672">=</span>/usr/local/apr <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--with-expat<span style="color:#f92672">=</span>/usr/local/expat
+
+make <span style="color:#f92672">&amp;&amp;</span> make install
+
+</code></pre></div><blockquote>
+<p>설치 확인</p>
+</blockquote>
+<pre><code>/usr/local/apr-util/bin/apu-1-config --version
+
+-------------------------
+1.6.1
+</code></pre><h3 id="pcre-설치컴파일빌드">pcre 설치(컴파일/빌드)</h3>
+<div class="alert info no-icon ">
+  <p>PCRE(Pecl Compatible Regular Expressions) 는 펄 호환 정규 표현식으로서, 정규식 패턴 일치를 구현하는 함수의 집합입니다.</p>
+</div>
+<blockquote>
+<p>설치</p>
+</blockquote>
+<pre><code>cd /usr/local/src
+
+wget https://ftp.pcre.org/pub/pcre/pcre-8.44.tar.gz
+
+tar xvfz pcre-8.44.tar.gz
+
+cd pcre-8.44
+
+./configure --enable-utf8 \
+--prefix=/usr/local/pcre
+
+make &amp; make install
+</code></pre><blockquote>
+<p>설치 확인</p>
+</blockquote>
+<pre><code>/usr/local/pcre/bin/pcre-config --version
+
+---------------------------
+8.44
+</code></pre><h3 id="http-server-다운로드">HTTP Server 다운로드</h3>
+<blockquote>
+<p>Apache 다운로드 폴더 생성 및 이동</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">mkdir -p /usr/local/src/httpd <span style="color:#f92672">&amp;&amp;</span> cd /usr/local/src/httpd
+</code></pre></div><blockquote>
+<p>Apache 다운로드</p>
+</blockquote>
+<p>다운로드 주소: <a href="http://httpd.apache.org/download.cgi">http://httpd.apache.org/download.cgi</a></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">wget https://downloads.apache.org//httpd/httpd-2.4.46.tar.gz
+</code></pre></div><p><img src="/img/web/apache/http_server_download.png" alt="다운로드 경로"></p>
+<blockquote>
+<p>압축풀기</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell">tar xvfz httpd-2.4.46.tar.gz
+</code></pre></div><h3 id="http-server-설치">HTTP Server 설치</h3>
+<p>/usr/local/src/httpd/httpd-2.4.46 폴더로 이동한 다음 아래 스크립트 실행</p>
+<blockquote>
+<p>설치</p>
+</blockquote>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-shell" data-lang="shell"><span style="color:#75715e"># 이동</span>
+cd /usr/local/src/httpd/httpd-2.4.46
+
+<span style="color:#75715e"># 스크립트 수행</span>
+./configure <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--prefix<span style="color:#f92672">=</span>/data/apache2 <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--with-apr<span style="color:#f92672">=</span>/usr/local/apr <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--with-apr-util<span style="color:#f92672">=</span>/usr/local/apr-util <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--with-pcre<span style="color:#f92672">=</span>/usr/local/pcre <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--with-ssl<span style="color:#f92672">=</span>/usr/local/ssl <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--enable-all <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--enable-so <span style="color:#ae81ff">\
+</span><span style="color:#ae81ff"></span>--with-mpm<span style="color:#f92672">=</span>prefork
+
+make <span style="color:#f92672">&amp;&amp;</span> make install
+</code></pre></div><blockquote>
+<p>기본 주속 수정</p>
+</blockquote>
+<pre><code>vi /data/apache2/conf/httpd.conf
+
+--------------------------------
+
+ServerName localhost:80
+
+LoadModule ssl_module modules/mod_ssl.so
+LoadModule rewrite_module modules/mod_rewrite.so
+
+Include conf/extra/httpd-vhosts.conf
+</code></pre><h2 id="apache-시작">Apache 시작</h2>
+<pre><code>cd /data/apache2/bin
+
+# 시작
+./apachectl start
+
+# 중지
+./apachectl stop
+
+
+# 포트 확인
+netstat -lntp | grep 80
+</code></pre><h2 id="apache-웹서버-service-등록">Apache 웹서버 Service 등록</h2>
+<blockquote>
+<p>vi /etc/systemd/system/httpd.service</p>
+</blockquote>
+<pre><code>[Unit]
+Description=The Apache HTTP Server
+After=syslog.target
+After=network.target
+
+
+[Service]
+# 자식 프로세스 생성이 완료되는 단계까지를 systemd가 시작이 완료되었다고 판단하게 된다.
+Type=forking
+PIDFile=/data/apache2/logs/httpd.pid
+#시작 명령을 정의
+ExecStart=/data/apache2/bin/apachectl start
+#reload 명령 정의
+ExecReload=/data/apache2/bin/apachectl graceful
+#종료 명령 정의
+ExecStop=/data/apacher2/bin/apachectl graceful-stop
+PrivateTmp=true
+LimitNOFILE=infinity
+
+[Install]
+WantedBy=multi-user.target
+</code></pre><blockquote>
+<p>서비스 내용 추가 후 daemon-reload</p>
+</blockquote>
+<pre><code>systemctl daemon-reload
+</code></pre><blockquote>
+<p>서비스 시작 및 재부팅시 실행 활성화</p>
+</blockquote>
+<pre><code>systemctl enable httpd
+
+systemctl start httpd
+</code></pre><blockquote>
+<p>서비스로그 확인</p>
+</blockquote>
+<pre><code>journalctl -u &lt;서비스이름&gt;
+
+# -f: follow,
+journalctl -f -u httpd
+</code></pre>
+              
+            </div>
+          </div>
+          <div id="post-footer" class="post-footer main-content-wrap">
+            
+              
+                
+                
+                  <div class="post-footer-tags">
+                    <span class="text-color-light text-small">TAGGED IN</span><br/>
+                    
+  <a class="tag tag--primary tag--small" href="/tags/apache-httpd-2.4.x/">Apache httpd 2.4.X</a>
+
+  <a class="tag tag--primary tag--small" href="/tags/compile/">compile</a>
+
+                  </div>
+                
+              
+            
+            <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 2차">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+            
+              
+            
+          </div>
+        </article>
+        <footer id="footer" class="main-content-wrap">
+  <span class="copyrights">
+    &copy; 2021 <a href="https://github.com/hyunwoo-kr">hyunwoo</a>. All Rights Reserved
+  </span>
+</footer>
+
+      </div>
+      <div id="bottom-bar" class="post-bottom-bar" data-behavior="1">
+        <div class="post-actions-wrap">
+  
+      <nav >
+        <ul class="post-actions post-action-nav">
+          
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--default tooltip--top" href="/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-2%EC%B0%A8/" data-tooltip="Apache HTTPD 테스트용 Centos7 구성 - 2차">
+              
+                  <i class="fa fa-angle-left"></i>
+                  <span class="hide-xs hide-sm text-small icon-ml">PREVIOUS</span>
+                </a>
+            </li>
+            <li class="post-action">
+              
+                <a class="post-action-btn btn btn--disabled">
+              
+                  <span class="hide-xs hide-sm text-small icon-mr">NEXT</span>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+            </li>
+          
+        </ul>
+      </nav>
+    <ul class="post-actions post-action-share" >
+      
+        <li class="post-action hide-lg hide-md hide-sm">
+          <a class="post-action-btn btn btn--default btn-open-shareoptions" href="#btn-open-shareoptions">
+            <i class="fa fa-share-alt"></i>
+          </a>
+        </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/">
+              <i class="fa fa-facebook-official"></i>
+            </a>
+          </li>
+        
+          <li class="post-action hide-xs">
+            <a class="post-action-btn btn btn--default" target="new" href="https://twitter.com/intent/tweet?text=https://hyunwoo-kr.github.io/2021/03/apache-httpd-%ED%85%8C%EC%8A%A4%ED%8A%B8%EC%9A%A9-centos7-%EA%B5%AC%EC%84%B1-3%EC%B0%A8/">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+        
+      
+      
+      <li class="post-action">
+        
+          <a class="post-action-btn btn btn--default" href="#">
+        
+          <i class="fa fa-list"></i>
+        </a>
+      </li>
+    </ul>
+  
+</div>
+
+      </div>
+      <div id="share-options-bar" class="share-options-bar" data-behavior="1">
+  <i id="btn-close-shareoptions" class="fa fa-close"></i>
+  <ul class="share-options">
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1-3%25EC%25B0%25A8%2F">
+          <i class="fa fa-facebook-official"></i><span>Share on Facebook</span>
+        </a>
+      </li>
+    
+      <li class="share-option">
+        <a class="share-option-btn" target="new" href="https://twitter.com/intent/tweet?text=https%3A%2F%2Fhyunwoo-kr.github.io%2F2021%2F03%2Fapache-httpd-%25ED%2585%258C%25EC%258A%25A4%25ED%258A%25B8%25EC%259A%25A9-centos7-%25EA%25B5%25AC%25EC%2584%25B1-3%25EC%25B0%25A8%2F">
+          <i class="fa fa-twitter"></i><span>Share on Twitter</span>
+        </a>
+      </li>
+    
+  </ul>
+</div>
+<div id="share-options-mask" class="share-options-mask"></div>
+    </div>
+    
+    <div id="about">
+  <div id="about-card">
+    <div id="about-btn-close">
+      <i class="fa fa-remove"></i>
+    </div>
+    
+      <img id="about-card-picture" src="https://www.gravatar.com/avatar/899b964b2b2b01a824f2fae05761538a?s=110" alt="Author&#39;s picture" />
+    
+    <h4 id="about-card-name">Hyunwoo Gwak</h4>
+    
+      <div id="about-card-bio">매일 조금씩 꾸준히 글쓰기</div>
+    
+    
+      <div id="about-card-job">
+        <i class="fa fa-briefcase"></i>
+        <br/>
+        Developer
+      </div>
+    
+    
+      <div id="about-card-location">
+        <i class="fa fa-map-marker"></i>
+        <br/>
+        Seoul, South Korea
+      </div>
+    
+  </div>
+</div>
+
+    
+
+    
+  
+    
+      <div id="cover" style="background-image:url('https://hyunwoo-kr.github.io/images/cover.jpg');"></div>
+    
+  
+
+
+    
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js" integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js" integrity="sha256-/BfiIkHlHoVihZdc6TFuj7MmJ0TWcWsMXkeDFwhi0zw=" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/2.1.7/js/jquery.fancybox.min.js" integrity="sha256-GEAnjcTqVP+vBp3SSc8bEDQqvWAZMiHyUSIorrWwH50=" crossorigin="anonymous"></script>
+
+
+<script src="/js/script-pcw6v3xilnxydl1vddzazdverrnn9ctynvnxgwho987mfyqkuylcb1nlt.min.js"></script>
+
+
+<script lang="javascript">
+window.onload = updateMinWidth;
+window.onresize = updateMinWidth;
+document.getElementById("sidebar").addEventListener("transitionend", updateMinWidth);
+function updateMinWidth() {
+  var sidebar = document.getElementById("sidebar");
+  var main = document.getElementById("main");
+  main.style.minWidth = "";
+  var w1 = getComputedStyle(main).getPropertyValue("min-width");
+  var w2 = getComputedStyle(sidebar).getPropertyValue("width");
+  var w3 = getComputedStyle(sidebar).getPropertyValue("left");
+  main.style.minWidth = `calc(${w1} - ${w2} - ${w3})`;
+}
+</script>
+
+<script>
+$(document).ready(function() {
+  hljs.configure({ classPrefix: '', useBR: false });
+  $('pre.code-highlight > code, pre > code').each(function(i, block) {
+    if (!$(this).hasClass('codeblock')) {
+      $(this).addClass('codeblock');
+    }
+    hljs.highlightBlock(block);
+  });
+});
+</script>
+
+
+  
+    
+  
+
+
+
+
+    
+  </body>
+</html>
+
