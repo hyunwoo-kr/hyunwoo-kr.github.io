@@ -279,13 +279,9 @@ cd openssl-1.1.1g
 # 컴파일 및 설치
 make &amp;&amp; make install
 </code></pre><h2 id="openssl-111gconf-생성">openssl-1.1.1g.conf 생성</h2>
-<pre><code>vi /etc/ld.so.conf.d/openssl-1.1.1g.conf
-
-# 파일이 열리면 아래 내용 추가 후 저장
-----
-/usr/local/ssl/lib
-----
+<pre><code>echo &quot;/usr/local/ssl/lib&quot; &gt; /etc/ld.so.conf.d/openssl-1.1.1g.conf
 </code></pre><h2 id="shared-object-동적-라이브러리-연결-확인">shared object (동적 라이브러리 연결) 확인</h2>
+<p>shared object 에 대한 올바른 링크를 설정하고 캐시를 다시 빌드합니다.</p>
 <pre><code>ldconfig -v
 </code></pre><h2 id="심볼릭링크-걸기">심볼릭링크 걸기</h2>
 <pre><code># 동적 라이브러리 심볼릭링크
