@@ -4,8 +4,53 @@
   
   <url>
     <loc>https://hyunwoo-kr.github.io/</loc>
-    <lastmod>2021-03-08T16:41:42+09:00</lastmod>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
     <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/categories/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/2021/04/file-server-provisioning-1%EC%B0%A8-%EC%84%A4%EA%B3%84/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/tags/file-server-%EC%8B%A4%EC%8B%9C%EA%B0%84-%EB%B0%B1%EC%97%85/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/tags/file-server/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/categories/infra/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/tags/lsyncd/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/post/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/tags/rsync/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://hyunwoo-kr.github.io/tags/</loc>
+    <lastmod>2021-04-16T19:22:44+09:00</lastmod>
   </url>
   
   <url>
@@ -19,22 +64,7 @@
   </url>
   
   <url>
-    <loc>https://hyunwoo-kr.github.io/categories/</loc>
-    <lastmod>2021-03-08T16:41:42+09:00</lastmod>
-  </url>
-  
-  <url>
     <loc>https://hyunwoo-kr.github.io/tags/compile/</loc>
-    <lastmod>2021-03-08T16:41:42+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hyunwoo-kr.github.io/post/</loc>
-    <lastmod>2021-03-08T16:41:42+09:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://hyunwoo-kr.github.io/tags/</loc>
     <lastmod>2021-03-08T16:41:42+09:00</lastmod>
   </url>
   

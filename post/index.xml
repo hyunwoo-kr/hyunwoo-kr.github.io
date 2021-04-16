@@ -6,10 +6,19 @@
     <description>Recent content in Posts on 현우의 기술 블로그</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>ko-kr</language>
-    <lastBuildDate>Mon, 08 Mar 2021 16:41:42 +0900</lastBuildDate>
+    <lastBuildDate>Fri, 16 Apr 2021 19:22:44 +0900</lastBuildDate>
     
 	<atom:link href="https://hyunwoo-kr.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>File Server Provisioning 1차 - 설계</title>
+      <link>https://hyunwoo-kr.github.io/2021/04/file-server-provisioning-1%EC%B0%A8-%EC%84%A4%EA%B3%84/</link>
+      <pubDate>Fri, 16 Apr 2021 19:22:44 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/2021/04/file-server-provisioning-1%EC%B0%A8-%EC%84%A4%EA%B3%84/</guid>
+      <description>&lt;p&gt;File Server 에 대해 실시간 백업을 하고, keepalived + NFS 도입하여, HA 구성까지 진행 해 보자.&lt;/p&gt;</description>
+    </item>
     
     <item>
       <title>Apache HTTPD 테스트용 Centos7 구성 - 3차</title>
@@ -62,7 +71,7 @@
       <pubDate>Mon, 03 Feb 2020 17:51:02 +0900</pubDate>
       
       <guid>https://hyunwoo-kr.github.io/2020/02/tron-python-api%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%86%A1%EA%B8%88/</guid>
-      <description>&lt;p&gt;Tron Python API 모듈을 사용해서 TRC10 &amp;lsquo;송금&#39;을 하려면 어떻게 해야 할까?&lt;/p&gt;</description>
+      <description>&lt;p&gt;Tron Python API 모듈을 사용해서 TRC10 &amp;lsquo;송금&amp;rsquo;을 하려면 어떻게 해야 할까?&lt;/p&gt;</description>
     </item>
     
     <item>

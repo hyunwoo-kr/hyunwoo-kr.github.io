@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="generator" content="Hugo 0.64.0 with theme Tranquilpeak 0.4.7-BETA">
+<meta name="generator" content="Hugo 0.74.3 with theme Tranquilpeak 0.4.7-BETA">
 <meta name="author" content="Hyunwoo Gwak">
 <meta name="keywords" content="tech, development, hyunwoo">
-<meta name="description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&#39;을 하려면 어떻게 해야 할까?">
+<meta name="description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&rsquo;을 하려면 어떻게 해야 할까?">
 
 
-<meta property="og:description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&#39;을 하려면 어떻게 해야 할까?">
+<meta property="og:description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&rsquo;을 하려면 어떻게 해야 할까?">
 <meta property="og:type" content="article">
 <meta property="og:title" content="TRON - Python API를 사용한 송금">
 <meta name="twitter:title" content="TRON - Python API를 사용한 송금">
 <meta property="og:url" content="https://hyunwoo-kr.github.io/2020/02/tron-python-api%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%86%A1%EA%B8%88/">
 <meta property="twitter:url" content="https://hyunwoo-kr.github.io/2020/02/tron-python-api%EB%A5%BC-%EC%82%AC%EC%9A%A9%ED%95%9C-%EC%86%A1%EA%B8%88/">
 <meta property="og:site_name" content="현우의 기술 블로그">
-<meta property="og:description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&#39;을 하려면 어떻게 해야 할까?">
-<meta name="twitter:description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&#39;을 하려면 어떻게 해야 할까?">
+<meta property="og:description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&rsquo;을 하려면 어떻게 해야 할까?">
+<meta name="twitter:description" content="Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&rsquo;을 하려면 어떻게 해야 할까?">
 <meta property="og:locale" content="ko-kr">
 
   
@@ -237,7 +237,7 @@
           
           <div class="post-content markdown" itemprop="articleBody">
             <div class="main-content-wrap">
-              <p>Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금'을 하려면 어떻게 해야 할까?</p>
+              <p>Tron Python API 모듈을 사용해서 TRC10 &lsquo;송금&rsquo;을 하려면 어떻게 해야 할까?</p>
 <p>[참고 사이트]</p>
 <ul>
 <li><a href="https://developers.tron.network/">TRON Developers</a></li>
@@ -248,40 +248,40 @@
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> Tron
 <span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> HttpProvider
 
-full_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
-solidity_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
-event_server <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
+full_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74">&#39;https://api.trongrid.io&#39;</span>)
+solidity_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74">&#39;https://api.trongrid.io&#39;</span>)
+event_server <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74">&#39;https://api.trongrid.io&#39;</span>)
 
 tron <span style="color:#f92672">=</span> Tron(full_node<span style="color:#f92672">=</span>full_node,
             solidity_node<span style="color:#f92672">=</span>solidity_node,
             event_server<span style="color:#f92672">=</span>event_server)
 
 
-tron<span style="color:#f92672">.</span>private_key <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">private_key</span><span style="color:#e6db74">&#39;</span>
-tron<span style="color:#f92672">.</span>default_address <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">default address</span><span style="color:#e6db74">&#39;</span>
+tron<span style="color:#f92672">.</span>private_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;private_key&#39;</span>
+tron<span style="color:#f92672">.</span>default_address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;default address&#39;</span>
 
 <span style="color:#75715e"># added message</span>
-send <span style="color:#f92672">=</span> tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>send_transaction(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">to</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>)
+send <span style="color:#f92672">=</span> tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>send_transaction(<span style="color:#e6db74">&#39;to&#39;</span>, <span style="color:#ae81ff">1</span>)
 
 <span style="color:#66d9ef">print</span>(send)
 </code></pre></div><h2 id="위-제공하는-소스에서-trc10-토큰을-송신-하려면-아래와-같이-하면-될-거라-생각-했음">위 제공하는 소스에서 TRC10 토큰을 송신 하려면 아래와 같이 하면 될 거라 생각 했음</h2>
 <div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> Tron
 <span style="color:#f92672">from</span> tronapi <span style="color:#f92672">import</span> HttpProvider
 
-full_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
-solidity_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
-event_server <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">https://api.trongrid.io</span><span style="color:#e6db74">&#39;</span>)
+full_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74">&#39;https://api.trongrid.io&#39;</span>)
+solidity_node <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74">&#39;https://api.trongrid.io&#39;</span>)
+event_server <span style="color:#f92672">=</span> HttpProvider(<span style="color:#e6db74">&#39;https://api.trongrid.io&#39;</span>)
 
 tron <span style="color:#f92672">=</span> Tron(full_node<span style="color:#f92672">=</span>full_node,
             solidity_node<span style="color:#f92672">=</span>solidity_node,
             event_server<span style="color:#f92672">=</span>event_server)
 
 
-tron<span style="color:#f92672">.</span>private_key <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">private_key</span><span style="color:#e6db74">&#39;</span>
-tron<span style="color:#f92672">.</span>default_address <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">default address</span><span style="color:#e6db74">&#39;</span>
+tron<span style="color:#f92672">.</span>private_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;private_key&#39;</span>
+tron<span style="color:#f92672">.</span>default_address <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;default address&#39;</span>
 
 <span style="color:#75715e"># added message</span>
-send <span style="color:#f92672">=</span> tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>send_token(<span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">to</span><span style="color:#e6db74">&#39;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">token_id</span><span style="color:#e6db74">&#39;</span>)
+send <span style="color:#f92672">=</span> tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>send_token(<span style="color:#e6db74">&#39;to&#39;</span>, <span style="color:#ae81ff">1</span>, <span style="color:#e6db74">&#39;token_id&#39;</span>)
 
 <span style="color:#66d9ef">print</span>(send)
 </code></pre></div><h2 id="하지만-오류-발생">하지만&hellip;. 오류 발생.</h2>
@@ -303,7 +303,7 @@ TypeError: encoding without a string argument
 </code></pre></div><p>그 중에서도</p>
 <h3 id="selftronprivate_key-의-값이-none-이라서-그렇다">self.tron.private_key 의 값이 None 이라서 그렇다</h3>
 <p>제공해 주는 위의 소스에서 아래 항목을 추가 하면 해결 된다.</p>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>tron<span style="color:#f92672">.</span>private_key <span style="color:#f92672">=</span> <span style="color:#e6db74"></span><span style="color:#e6db74">&#39;</span><span style="color:#e6db74">private_key</span><span style="color:#e6db74">&#39;</span>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python">tron<span style="color:#f92672">.</span>trx<span style="color:#f92672">.</span>tron<span style="color:#f92672">.</span>private_key <span style="color:#f92672">=</span> <span style="color:#e6db74">&#39;private_key&#39;</span>
 </code></pre></div><p>수정 된 전체 소스응 아래와 같다</p>
 <pre><code>from tronapi import Tron
 from tronapi import HttpProvider

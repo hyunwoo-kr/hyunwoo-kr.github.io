@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>rsync on 현우의 기술 블로그</title>
+    <link>https://hyunwoo-kr.github.io/tags/rsync/</link>
+    <description>Recent content in rsync on 현우의 기술 블로그</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>ko-kr</language>
+    <lastBuildDate>Fri, 16 Apr 2021 19:22:44 +0900</lastBuildDate>
+    
+	<atom:link href="https://hyunwoo-kr.github.io/tags/rsync/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>File Server Provisioning 1차 - 설계</title>
+      <link>https://hyunwoo-kr.github.io/2021/04/file-server-provisioning-1%EC%B0%A8-%EC%84%A4%EA%B3%84/</link>
+      <pubDate>Fri, 16 Apr 2021 19:22:44 +0900</pubDate>
+      
+      <guid>https://hyunwoo-kr.github.io/2021/04/file-server-provisioning-1%EC%B0%A8-%EC%84%A4%EA%B3%84/</guid>
+      <description>&lt;p&gt;File Server 에 대해 실시간 백업을 하고, keepalived + NFS 도입하여, HA 구성까지 진행 해 보자.&lt;/p&gt;</description>
+    </item>
+    
+  </channel>
+</rss>
